@@ -1,0 +1,171 @@
+.gradient-advanced {
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+
+.navbar-transparent {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
+  box-shadow: none !important;
+  z-index: 100;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.5),
+    rgba(37, 117, 252, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.5),
+    rgba(37, 117, 252, 0.5)
+  );
+}
+
+.gradient-custom1 {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.8),
+    rgba(37, 117, 252, 0.8)
+  );
+
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.8),
+    rgba(37, 117, 252, 0.8)
+  );
+}
+
+.gradient-custom2 {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(
+    to bottom,
+    rgba(106, 17, 203, 0.8),
+    rgba(37, 117, 252, 0.8)
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(106, 17, 203, 0.8),
+    rgba(37, 117, 252, 0.8)
+  );
+}
+
+.predict-modal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: bottom 0.4s ease-in-out;
+  z-index: 1050;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.predict-modal.show {
+  bottom: 0;
+}
+
+.card {
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Slide modal up when opening, slide down when closing */
+.slide-modal .modal-dialog {
+  transform: translateY(90%);
+  transition: transform 0.5s ease-out;
+}
+
+.slide-modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Optional: smoother fade and no zoom effect */
+.slide-modal.fade .modal-dialog {
+  transition: transform 0.5s ease-out;
+}
+
+.custom-modal {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 85vh;
+  background-color: white;
+  box-shadow: 0 -3px 15px rgba(23, 59, 243, 0.2);
+  border-radius: 16px 16px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-modal.show {
+  transform: translateY(0);
+}
+
+.custom-modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* #closeModalBtn {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 10px;
+  color: white;
+} */
+
+#closeModalBtn:hover {
+  color: #000;
+}
+
+.btn-repredict:hover {
+  background-color: #007bff;
+  color: white;
+}

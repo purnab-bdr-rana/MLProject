@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="bg-dark position-relative pt-5" style="overflow: hidden;">
+    <div style="
+      position: absolute;
+      top: -20%;
+      right: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 223, 0, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+    <div style="
+      position: absolute;
+      bottom: -20%;
+      left: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 123, 255, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+    <div class="container-fluid bg-image m-0 p-0 pt-5 h-100" style="background-image: url('../static/images/Background1.png');
+           position: relative;
+           z-index: 2;
+           ">
+
+        <div class="row g-0 h-100 flex-lg-row flex-column pb-0 mb-0 pt-5" style="padding-bottom: -3em;">
+            <div class="col-lg-6 d-flex align-items-center justify-content-center p-5 h-100 mb-5">
+                <div class="text-white text-center text-lg-start ps-lg-5 ms-lg-5">
+                    <div class="ps-lg-5">
+                        <div class="pb-4">
+                            <h1 class="display-4 fw-bold">Smarter Fitness Starts Here</h1>
+                            <p class="lead mb-4">Welcome to <strong>FitPulse AI</strong> — your personal fitness analyst
+                                powered
+                                by cutting-edge AI technology. Take the guesswork out of your workout and train with
+                                precision.
+                            </p>
+                        </div>
+                        <div class="mt-5">
+                            <a href="/predict" class="btn btn-primary btn-lg me-3">Get Your Prediction</a>
+                            <a href="/about" class="btn btn-outline-light btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-end justify-content-end p-0 m-0 h-100 position-relative">
+                <img src="../static/images/HeroImage.png" alt="hero image" class="img-fluid"
+                    style="object-fit: contain; width: 100%; max-height: 100%;">
+
+                <!-- Floating messages/numbers -->
+                <div
+                    class="floating-item position-absolute top-50 start-0 translate-end translate-middle fs-3 border px-4 py-1 rounded border-primary bg-light">
+                    Burn
+                </div>
+                <div
+                    class="floating-item position-absolute bottom-0 end-0 translate-middle  border gradient-custom1 fs-3 px-4 py-1 rounded text-white">
+                    345 kcal
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div style="height: 1em"></div>
+
+<section class="container my-5">
+    <h2 class="mb-4">AI-Powered Workout Predictions</h2>
+    <div class="row">
+        <div class="col-12 col-lg-5">
+            <p>
+                FitPulse AI uses your workout input to predict performance, track trends, and guide you toward smarter
+                routines.
+                Say goodbye to guesswork — our smart algorithm adapts to your fitness journey and delivers accurate
+                insights just for you.
+            </p>
+            <div class="border boder-dark rounded-2 p-4">
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-5">
+                        <i class="fas fa-bolt text-primary me-2 fa-2x"></i>
+                        <p> Instant predictions based on activity type and desired calorie burn.</p>
+                    </li>
+                    <li class="mb-5">
+                        <i class="fas fa-chart-line text-success me-2 fa-2x"></i>
+                        <p>Tracks your progress over time and adapts suggestions as you evolve.</p>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-heartbeat text-danger me-2 fa-2x"></i>
+                        <p>Supports health-conscious goals with safe, personalized recommendations.</p>
+                    </li>
+                </ul>
+
+                <a href="/predict" class="btn btn-outline-dark mt-4">Try It Now</a>
+            </div>
+        </div>
+        <div class="col-12 col-lg-1"></div>
+
+        <div class="col-12 col-lg-6">
+            <div class="d-flex justify-content-between mt-5 mt-lg-0">
+                <div class="me-2" style="margin-top: 20px">
+                    <img src="{{ url_for('static', filename='images/AboutImage1.png') }}" alt="AI Training Illustration"
+                        class="img-fluid rounded-3" />
+                </div>
+                <div class="ms-2" style="margin-top: -20px">
+                    <img src="{{ url_for('static', filename='images/AboutImage2.png') }}"
+                        alt="Workout Tracker Illustration" class="img-fluid rounded-3" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="height: 1em"></div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-0 rounded-5">
+            <div class="col-md-6">
+                <div class="position-relative d-flex flex-column justify-content-center bg-dark p-4 rounded-start-3"
+                    style="background-image: url('/static/images/CardBackground2.png'); background-size: cover; background-position: center; height: 300px; overflow: hidden;">
+
+                    <div class="text-white z-1">
+                        <h2 class="mb-2">Optimize Your Workout Form</h5>
+                            <p class="mb-0">Leverage AI-driven feedback to perfect your posture and ,<br> maximize every
+                                rep. Improve efficiency, reduce injury risk, <br> and see results faster with
+                                personalized form analysis.</p>
+                    </div>
+
+                    <img src="/static/images/CardImage1.png" alt="Workout Pose" class="position-absolute end-0 bottom-0"
+                        style="width: 50%; height: auto;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="position-relative d-flex flex-column justify-content-center bg-dark p-4 rounded-end-3"
+                    style="background-image: url('/static/images/CardBackground1.png'); background-size: cover; background-position: center; height: 300px; overflow: hidden;">
+
+                    <div class="text-white z-1">
+                        <h2 class="mb-2">AI Performance Insights</h5>
+                            <p class="mb-0">Unlock in-depth reports and tailored predictions <br> based on your unique
+                                data. Understand your <br> progress, identify trends, and fine-tune your <br> fitness
+                                plan for continuous improvement.</p>
+                    </div>
+
+                    <img src="/static/images/CardImage2.png" alt="AI Analysis" class="position-absolute end-0 bottom-0"
+                        style="width: 50%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div style="height: 1em"></div>
+
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="mb-5">
+                <h2 class="mb-4">Built for Progress, Backed by Science</h2>
+                <p>Unlike typical fitness apps, FitPulse AI adapts to <strong>you</strong>. Our algorithm
+                    analyzes your
+                    patterns
+                    and delivers personalized insights to enhance your workouts, prevent burnout, and ensure long-term
+                    results.
+                </p>
+            </div>
+
+            <div class="border p-4 my-3 bg-light" style="border-radius: 0px 2em 0px 2em;">
+                <h2 class="mb-4">Have Questions or Feedback?</h2>
+                <p>We'd love to hear from you! Whether it's a feature request, a question, or just a quick
+                    hello —
+                    reach out anytime.</p>
+                <div class="d-flex flex-column flex-lg-row justify-content-start gap-3 py-4">
+                    <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="/about" class="btn btn-outline-primary btn-lg">Meet the Tech Behind FitPulse</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="d-flex justify-content-between mt-5 mt-lg-0">
+                <div class="me-2" style="margin-top: -30px">
+                    <img src="{{ url_for('static', filename='images/AboutImage1.png') }}" alt="AI Training Illustration"
+                        class="img-fluid rounded-3" />
+                </div>
+                <div class="ms-2" style="margin-top: 30px">
+                    <img src="{{ url_for('static', filename='images/AboutImage2.png') }}"
+                        alt="Workout Tracker Illustration" class="img-fluid rounded-3" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="height: 1em"></div>
+
+<section class="bg-dark position-relative overflow-hidden">
+    <!-- Top-right blurred circle -->
+    <div style="
+    position: absolute;
+    top: -20%;
+    right: -3%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 223, 0, 0.5);
+    border-radius: 50%;
+    filter: blur(10rem);
+    z-index: 1;
+    pointer-events: none;">
+    </div>
+
+    <!-- Bottom-left blurred circle -->
+    <div style="
+    position: absolute;
+    bottom: -20%;
+    left: -3%;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 123, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(10rem);
+    z-index: 1;
+    pointer-events: none;">
+    </div>
+
+    <!-- Main content container with background image -->
+    <div class="container-fluid  text-white position-relative z-2 pt-5 ps-5" style="
+    background-image: url('../static/images/Background1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;">
+        <div class="row ms-lg-5 ps-lg-5 mt-5">
+            <div class="d-flex flex-column col-lg-4 mb-4 mb-lg-0 ps-lg-5 justify-content-center align-items-center align-items-lg-start mb-5 mb-lg-0">
+                <h2 class="mb-3 fs-2">Ready to Train Smarter?</h2>
+                <p class="mb-4">Join hundreds of users already optimizing their workouts with FitPulse AI. It's time to
+                    work out with purpose.</p>
+                <a href="/predict" class="btn btn-light btn-lg">Start Predicting</a>
+            </div>
+
+            <div class="col-lg-8 text-end m-0 p-0">
+                <img src="../static/images/HomeContact.png" alt="Training Illustration" class="img-fluid mb-0">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

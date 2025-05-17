@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-dark position-relative mb-5" style="overflow: hidden">
+    <div style="
+      position: absolute;
+      top: -20%;
+      right: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 223, 0, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+    <div style="
+      position: absolute;
+      bottom: -20%;
+      left: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 123, 255, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+    <div class="p-5 text-center bg-image d-flex justify-content-center align-items-center" style="
+      background-image: url('../static/images/Background1.png');
+      height: 400px;
+      margin-top: 58px;
+      position: relative;
+      z-index: 2;
+    ">
+        <div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="text-white">
+                    <h1 class="mb-3 fs-3">Predict</h1>
+                    <h4 class="mb-3 fs-1 text-upper">
+                        Make a Prediction
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="height: 1em"></div>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="mb-4">
+                <h2 class="fw-bold">How It Works</h2>
+                <p class="text-muted">Fill in your workout and body details. Our model will estimate your calories
+                    burned
+                    instantly.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 bg-dark text-white border py-4 border-0 rounded"
+                style="background-image: url(../static/images/CardBackground2.png); border-radius: 0; background-position: center;">
+                <div class="card-body d-flex flex-column gap-4">
+                    <div class="me-3">
+                        <i class="fas fa-user" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="col">
+                        <h5 class="card-title fs-4">1. Enter Your Info</h5>
+                        <p class="card-text">
+                            Provide essential details such as your gender, age, height, weight, and body temperature for
+                            accurate predictions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0 rounded">
+                <div class="card-body bg-dark text-white py-4"
+                    style="background-image: url(../static/images/CardBackground1.png); border-radius: 0; background-position: center;">
+                    <div class="card-body d-flex flex-column gap-4">
+                        <div class="me-3">
+                            <i class="fas fa-dumbbell" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="col">
+                            <h5 class="card-title fs-4">2. Select Workout</h5>
+                            <p class="card-text">
+                                Choose your preferred workout type including Yoga, Cardio, Strength training, or
+                                Stretching
+                                to tailor the estimate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0 rounded">
+                <div class="card-body d-flex bg-dark py-4"
+                    style="background-image: url(../static/images/CardBackground2.png); border-radius: 0; background-position: center;">
+                    <div class="card-body d-flex flex-column gap-4 text-white">
+                        <div class="me-3">
+                            <i class="fas fa-chart-line" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="col">
+                            <h5 class="card-title fs-4">3. Get Prediction</h5>
+                            <p class="card-text">
+                                Submit your info and instantly receive an estimate of your calorie burn tailored to your
+                                workout and stats.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+    </div>
+
+</section>
+
+<section class="container my-5 py-5" id="predict-section"
+    data-prediction-exists="{{ 'true' if prediction is not none else 'false' }}">
+    <h2 class=" mb-4">🔥 Predict Duration Required to Burn Calories</h2>
+
+    <div class="border rounded-4 p-4">
+        <form method="POST">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Calories (Wish to burn - kcal)</label>
+                    <input type="number" name="Calories" class="form-control" placeholder="e.g. 200" step="any"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Age</label>
+                    <input type="number" name="Age" class="form-control" placeholder="e.g. 25" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Height (cm)</label>
+                    <input type="number" name="Height" class="form-control" placeholder="e.g. 58" step="any" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Weight (kg)</label>
+                    <input type="number" name="Weight" class="form-control" placeholder="e.g. 175" step="any" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Heart Rate (Before)</label>
+                    <input type="number" name="Heart_Rate" class="form-control" placeholder="e.g. 120" step="any"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Body Temperature (°C)</label>
+                    <input type="number" name="Body_Temp" class="form-control" placeholder="e.g. 37.8" step="any"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Gender</label>
+                    <select name="Gender" class="form-select" required>
+                        <option disabled selected value="">Select Gender</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Workout Type</label>
+                    <select name="Workout_Type" class="form-select" required>
+                        <option disabled selected value="">Choose Workout Type</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Strength</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="hiit">HIIT</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Predict</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<!-- Fullscreen Result Modal -->
+<div id="predictionModal" class="custom-modal hidden bg-secondary" tabindex="-1" aria-labelledby="predictionModalLabel"
+    aria-hidden="true" style="background-image: url(../static/images/Background1.png);">
+
+    <div style="
+      position: absolute;
+      top: -20%;
+      right: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 223, 0, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+    <div style="
+      position: absolute;
+      bottom: -20%;
+      left: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 123, 255, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+    <div class="modal-content">
+        <div class="d-flex justify-content-center flex-column jap-3 align-items-center py-5">
+            <h2 class="text-white fs-1 ">🔥 Predicted Duration</h2>
+            <h1 class="display-3 text-white fs-1">{{ prediction }}</h1>
+            <p class="text-white">minutes</p>
+            <form method="GET" class="repredict-form" id="repredictForm">
+                <button type="submit" class="btn btn-light me-3 fs-5">Again</button>
+                <button id="closeModalBtn" class="btn btn-outline-light fs-5" aria-label="Close">Close</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div style="height: 1em"></div>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="mb-5">
+                <h2 class="mb-4">Built for Progress, Backed by Science</h2>
+                <p>Unlike typical fitness apps, FitPulse AI adapts to <strong>you</strong>. Our algorithm
+                    analyzes your
+                    patterns
+                    and delivers personalized insights to enhance your workouts, prevent burnout, and ensure long-term
+                    results.
+                </p>
+            </div>
+
+            <div class="border p-4 my-3 bg-light" style="border-radius: 0px 2em 0px 2em;">
+                <h2 class="mb-4">Have Questions or Feedback?</h2>
+                <p>We'd love to hear from you! Whether it's a feature request, a question, or just a quick
+                    hello —
+                    reach out anytime.</p>
+                <div class="d-flex flex-column flex-lg-row justify-content-start gap-3 py-4">
+                    <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="/about" class="btn btn-outline-primary btn-lg">Meet the Tech Behind FitPulse</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="d-flex justify-content-between mt-5 mt-lg-0">
+                <div class="me-2" style="margin-top: -30px">
+                    <img src="{{ url_for('static', filename='images/AboutImage1.png') }}" alt="AI Training Illustration"
+                        class="img-fluid rounded-3" />
+                </div>
+                <div class="ms-2" style="margin-top: 30px">
+                    <img src="{{ url_for('static', filename='images/AboutImage2.png') }}"
+                        alt="Workout Tracker Illustration" class="img-fluid rounded-3" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

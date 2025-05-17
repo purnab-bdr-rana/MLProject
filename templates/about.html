@@ -1,0 +1,173 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Background image -->
+<section class="bg-dark position-relative mb-5" style="overflow: hidden">
+  <div style="
+      position: absolute;
+      top: -20%;
+      right: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 223, 0, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+  <div style="
+      position: absolute;
+      bottom: -20%;
+      left: -3%;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 123, 255, 0.5);
+      border-radius: 50%;
+      filter: blur(10rem);
+      z-index: 1;
+      pointer-events: none;
+    "></div>
+
+  <div class="p-5 text-center bg-image d-flex justify-content-center align-items-center" style="
+      background-image: url('../static/images/Background1.png');
+      height: 400px;
+      margin-top: 58px;
+      position: relative;
+      z-index: 2;
+    ">
+    <div>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="text-white">
+          <h1 class="mb-3 fs-3">About Us</h1>
+          <h4 class="mb-3 fs-1 text-upper">
+            Your Intelligent Fitness Companion
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height: 1em"></div>
+
+<section class="container my-lg-5">
+  <h2 class="mb-4">Welcome to FitPulse AI</h2>
+  <div class="row">
+    <div class="col-12 col-lg-5">
+      <p>
+        Welcome to FitPulse AI — where science meets simplicity. We're here to
+        revolutionize the way you work out by providing personalized, AI-driven
+        insights that make every minute count. Say goodbye to guesswork and
+        hello to smarter fitness.
+      </p>
+      <div class="border boder-dark rounded-2 p-4">
+        <ul class="list-unstyled">
+          <li class="py-1">
+            <div>
+              <i class="far fa-circle-check me-2 fa-xl"></i>
+              <strong class="fs-5">Personalized Guidance</strong>
+            </div>
+            <p>Because your fitness goals are as unique as you are.</p>
+          </li>
+          <li class="py-1">
+            <div>
+              <i class="far fa-circle-check me-2 fa-xl"></i>
+              <strong class="fs-5">Science-Backed</strong>
+            </div>
+            <p>Developed using the latest AI and health data.</p>
+          </li>
+          <li class="py-1">
+            <div>
+              <i class="far fa-circle-check me-2 fa-xl"></i>
+              <strong class="fs-5">Easy to Use</strong>
+            </div>
+            <p>
+              Just input your info and get actionable predictions instantly.
+            </p>
+          </li>
+          <li class="py-1">
+            <div>
+              <i class="far fa-circle-check me-2 fa-xl"></i>
+
+              <strong class="fs-5">Safe & Effective</strong>
+            </div>
+            <p>Optimize your routine without overtraining or burnout.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-1"></div>
+    <div class="col-12 col-lg-6">
+      <div class="d-flex justify-content-between mt-5 mt-lg-0">
+        <div class="me-2" style="margin-top: 20px">
+          <img src="{{ url_for('static', filename='images/AboutImage1.png') }}" alt="AI Training Illustration"
+            class="img-fluid rounded-3" />
+        </div>
+        <div class="ms-2" style="margin-top: -20px">
+          <img src="{{ url_for('static', filename='images/AboutImage2.png') }}" alt="Workout Tracker Illustration"
+            class="img-fluid rounded-3" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height: 3em"></div>
+
+<section class="container my-5">
+  <div class="mt-5">
+    <img src="../static/images/AboutImageGym.jpg" alt="Gym Image" class="img-fluid rounded-3" />
+  </div>
+</section>
+
+<div style="height: 3em"></div>
+
+<section class="bg-dark position-relative overflow-hidden">
+    <!-- Top-right blurred circle -->
+    <div style="
+    position: absolute;
+    top: -20%;
+    right: -3%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 223, 0, 0.5);
+    border-radius: 50%;
+    filter: blur(10rem);
+    z-index: 1;
+    pointer-events: none;">
+    </div>
+
+    <!-- Bottom-left blurred circle -->
+    <div style="
+    position: absolute;
+    bottom: -20%;
+    left: -3%;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 123, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(10rem);
+    z-index: 1;
+    pointer-events: none;">
+    </div>
+
+    <!-- Main content container with background image -->
+    <div class="container-fluid  text-white position-relative z-2 pt-5 ps-5" style="
+    background-image: url('../static/images/Background1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;">
+        <div class="row ms-lg-5 ps-lg-5 mt-5">
+            <div class="d-flex flex-column col-lg-4 mb-4 mb-lg-0 ps-lg-5 justify-content-center align-items-center align-items-lg-start mb-5 mb-lg-0">
+                <h2 class="mb-3 fs-2">Ready to Train Smarter?</h2>
+                <p class="mb-4">Join hundreds of users already optimizing their workouts with FitPulse AI. It's time to
+                    work out with purpose.</p>
+                <a href="/predict" class="btn btn-light btn-lg">Start Predicting</a>
+            </div>
+
+            <div class="col-lg-8 text-end m-0 p-0">
+                <img src="../static/images/HomeContact.png" alt="Training Illustration" class="img-fluid mb-0">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
