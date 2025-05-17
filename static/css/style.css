@@ -148,18 +148,6 @@
   margin-bottom: 10px;
 }
 
-/* #closeModalBtn {
-  position: absolute;
-  top: -1rem;
-  right: 0;
-  border: none;
-  background: transparent;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0 10px;
-  color: white;
-} */
 
 #closeModalBtn:hover {
   color: #000;

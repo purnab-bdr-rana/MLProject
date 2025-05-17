@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{ title }} | FitPulse AI</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/Logo.png') }}" type="image/png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -136,7 +138,11 @@
                                 </div>
                             </div>
                             <div class="text-center mt-5">
-                                <button type="submit" class="btn btn-primary btn-lg px-5">Predict</button>
+                                <button id="predictBtn" type="submit" class="btn btn-primary btn-lg px-5">
+                                    <span id="btnText">Predict</span>
+                                    <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2" role="status"
+                                        aria-hidden="true" style="display: none;"></span>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -204,6 +210,20 @@
 
     <script src="{{ url_for('static', filename='js/global-fab.js') }}"></script>
     <script src="{{ url_for('static', filename='js/prediction-modal.js') }}"></script>
+    <script>
+        const form = document.querySelector('form');
+        const predictBtn = document.getElementById('predictBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+
+        form.addEventListener('submit', () => {
+            predictBtn.disabled = true;
+
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline-block';
+        });
+    </script>
+
 
 
 </body>
