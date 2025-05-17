@@ -30,16 +30,23 @@ To generate a prediction, FitPulse AI expects the following information from the
 | `Gender`      | User's gender                                    | `"Male"` or `"Female"` |
 | `Workout_Type`| Type of workout                                  | `"Cardio"`, `"Strength"`, etc. |
 
-In the backend, the form data is processed using the following structure:
+---
 
-```python
-data = {
-    'Calories': float(request.form['Calories']),
-    'Age': int(request.form['Age']),
-    'Height': float(request.form['Height']),
-    'Weight': float(request.form['Weight']),
-    'Heart_Rate': float(request.form['Heart_Rate']),
-    'Body_Temp': float(request.form['Body_Temp']),
-    'Gender': request.form['Gender'],
-    'Workout_Type': request.form['Workout_Type']
-}
+## 🚀 Getting Started
+
+These instructions will help you set up and run the project on your local machine.
+
+### ✅ Prerequisites
+
+Before running the app, make sure you have:
+
+- Python 3.7 or above installed
+- pip (Python package installer)
+
+### 🛠 Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/FitPulseAI.git
+cd FitPulseAI
