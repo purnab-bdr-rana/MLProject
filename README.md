@@ -51,7 +51,9 @@ Before running the app, make sure you have:
 git clone https://github.com/your-username/FitPulseAI.git
 cd FitPulseAI
 
-### 2. (Optional) Create a Virtual Environment
+---
+
+2. **Create a Virtual Environment**
 
 ```bash
 python -m venv venv
