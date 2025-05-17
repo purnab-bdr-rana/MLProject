@@ -50,3 +50,31 @@ Before running the app, make sure you have:
 ```bash
 git clone https://github.com/your-username/FitPulseAI.git
 cd FitPulseAI
+
+### 2. (Optional) Create a Virtual Environment
+
+```bash
+python -m venv venv
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+### 4. Start the Flask Server
+
+```bash
+python app.py
+
+### 5. Open in Browser
+
+```bash
+http://localhost:5000
+
+
+
+
+
+
+
+
